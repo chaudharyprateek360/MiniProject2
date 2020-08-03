@@ -1,0 +1,165 @@
+
+<body style="background-color:powderblue;">
+<section align="center" class="alert alert-danger">
+    <i class='fas fa-address-book'></i>Phone Book App
+
+</section>
+
+
+    
+
+
+<section class="alert alert-info">
+  <b> Contacts</b>
+  
+  <!--<section align="right"><button type="button" class="btn btn-primary" routerLink="/add" >Add Contact</button></section>-->
+  <section align="right">
+  <button id="mybutton" type="button" class="btn btn-primary btn-sm" (click)="openDialog()">+Add Contact</button><br><br></section>
+  <br/>
+  
+
+</section>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="navbar navbar-expand-sm bg-light navbar-light" placeholder="Search By Name" #myInput [(ngModel)]="contact.name" (input)="Search()" style="width: 900px;"/>
+
+    <section class="text-dark" *ngIf="funcalled">
+    <section *ngFor="let contact of contactSearch" class="alert alert-warning" id="display">
+        
+      <li>
+        
+        <b>  {{contact.name }}   {{contact.lname}} </b><br/>
+        {{contact.contactNumber}}
+        </li>
+    </section>
+
+</section>
+
+
+
+
+<!--<div class="card">
+    <div class="card-body">
+    <section *ngFor="let contact of contacts" class="alert alert-warning" id="display">
+        
+        
+           <b>  {{contact.name }}   {{contact.lname}} <br/>
+            <p [class]="icon">{{contact.contactNumber}} 
+            
+
+           
+
+           <p align="right"><button type="button" class="btn btn-default btn-sm" (click)="deleteCont(contact)">
+            <span class="glyphicon glyphicon-remove"></span> 
+          </button>
+     
+           </p>
+        
+            
+    
+        
+            
+        
+        
+  
+</section>
+-->
+
+<div class="card" style="width: 128rem;" id="d1">
+    <div class="container p-9 my-9 bg-dark text-white">
+    <ul class="list-group list-group-flush" id="d1" >
+        <div *ngFor="let contact of contacts" id="d1">
+            
+            
+            
+           <b> <li class="list-group-item"> {{contact.name}}   {{contact.lname}}</li></b>
+            <li class="list-group-item"><p [class]="icon"> &nbsp;&nbsp;{{contact.contactNumber}} 
+            
+              <div align="right"> <button type="button" class="btn btn-default btn-sm" (click)="deleteCont(contact)">
+                    <span class="glyphicon glyphicon-remove"></span> 
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm" (click)="editCont(contact)">
+                    <span class="glyphicon glyphicon-edit"></span> 
+                  </button>
+                
+                </div>
+                </li>
+                
+                
+        </div>
+        </ul>
+        </div>
+        </div>
+
+        <section *ngIf="editFunc">
+         <!-- {{contactDel.name}} -->
+         <label>Name</label>
+         <input type="text" class="form-control" [(ngModel)]="contactDel.name" >
+         <label>Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="contactDel.lname" >
+          <label>Contact Number </label>
+          <input type="text" class="form-control"[(ngModel)]="contactDel.contactNumber">
+          <button type="button" class="btn btn-default btn-sm" (click)="editCont(contact)">Update
+</button>
+
+        </section>
+<router-outlet></router-outlet>
+<section style="background-color:grey;">
+
+
+
+</section>
+
+
+<div *ngIf="updateSuccess">
+
+<p class="alert-info">
+
+  Update Success
+</p>
+
+</div>
+
+
+<div class="container">
+    
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+   
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="assets/images/image1.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="assets/images/image2.jpg" alt="Chicago" style="width:50%;">
+      </div>
+    
+      
+    </div>
+
+   
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+        </body>
+      
+
+
+
+
+
+

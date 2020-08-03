@@ -1,0 +1,32 @@
+section {
+    position: relative;
+}
+div{
+    position: relative;
+}
+
+#d1{
+    background-color: aqua;
+}
+
+body{
+    background-color: aqua;
+    background-color: black;
+    
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+  background-color:#cccccc;
+}
+
+.task-header {
+    background-color: transparent;
+    padding: 0 5px;
+    height: 20px;
+}
+  
+  
